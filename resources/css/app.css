@@ -1,0 +1,70 @@
+@import 'tailwindcss';
+
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../storage/framework/views/*.php';
+@source '../**/*.blade.php';
+@source '../**/*.js';
+
+@theme {
+    --font-sans: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+    --font-display: 'Literata', ui-serif, Georgia, serif;
+    --color-alpine: #14352a;
+    --color-glacier: #2f8f6b;
+    --color-snow: #eaf4ef;
+    --color-ink: #101814;
+    --color-ember: #c26a2b;
+    --color-frost: #f3faf6;
+}
+
+:root {
+    --brand-alpine: #14352a;
+    --brand-glacier: #2f8f6b;
+    --brand-snow: #eaf4ef;
+    --brand-ink: #101814;
+    --brand-ember: #c26a2b;
+    --brand-frost: #f3faf6;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: var(--brand-ink);
+    background:
+        radial-gradient(1100px 520px at 8% -8%, color-mix(in srgb, #2f8f6b 16%, transparent), transparent 58%),
+        radial-gradient(800px 480px at 100% 0%, color-mix(in srgb, #c26a2b 10%, transparent), transparent 52%),
+        linear-gradient(180deg, #f3faf6 0%, #eaf4ef 50%, #f3faf6 100%);
+    font-family: 'Outfit', sans-serif;
+}
+
+.font-display {
+    font-family: 'Literata', serif;
+}
+
+.hero-pan {
+    animation: heroPan 20s ease-in-out infinite alternate;
+}
+
+@keyframes heroPan {
+    from { transform: scale(1.04) translate3d(0, 0, 0); }
+    to { transform: scale(1.12) translate3d(-2.5%, -1.5%, 0); }
+}
+
+.fade-up {
+    animation: fadeUp 0.95s ease both;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.float-soft {
+    animation: floatSoft 5.5s ease-in-out infinite;
+}
+
+@keyframes floatSoft {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-9px); }
+}
